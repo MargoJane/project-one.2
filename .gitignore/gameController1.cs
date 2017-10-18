@@ -8,10 +8,6 @@ public class gameController1 : MonoBehaviour {
 	public static int goldOre;
 	int timeToMine;
 	int miningSpeed;
-	public static int bronzePoints;
-	public static int silverPoints;
-	public static int goldPoints;
-	public static int totalPoints;
 
 	Vector3 cubePosition;
 	GameObject currentCube;
@@ -26,10 +22,6 @@ public class gameController1 : MonoBehaviour {
 		silverOre= 0;
 		goldOre = 0;
 		miningSpeed= 3;
-		totalPoints = 0;
-		bronzePoints= 1;
-		silverPoints= 10;
-		goldPoints= 100;
 
 		timeToMine= miningSpeed;
 
@@ -53,8 +45,6 @@ public class gameController1 : MonoBehaviour {
 				cubePosition = new Vector3 (xPosition, yPosition, 0f);
 				currentCube= Instantiate(Cube, cubePosition, Quaternion.identity);
 				currentCube.GetComponent<Renderer>().material.color = Color.yellow;
-
-				currentCube.GetComponent<cubeScript>().cubeType = "gold";
 			}
 
 			else if (bronzeOre < 4) {
@@ -63,8 +53,6 @@ public class gameController1 : MonoBehaviour {
 				cubePosition = new Vector3 (xPosition, yPosition, 0f);
 				currentCube= Instantiate(Cube, cubePosition, Quaternion.identity);
 				currentCube.GetComponent<Renderer>().material.color = Color.red;
-				 
-				currentCube.GetComponent<cubeScript>().cubeType = "bronze";
 
 				xPosition += Random.Range(-15, 15);
 				yPosition += Random.Range(-7,7);
@@ -81,8 +69,7 @@ public class gameController1 : MonoBehaviour {
 				cubePosition = new Vector3 (xPosition, yPosition, 0f);
 				currentCube= Instantiate(Cube, cubePosition, Quaternion.identity);
 				currentCube.GetComponent<Renderer>().material.color = Color.gray;
-
-				currentCube.GetComponent<cubeScript>().cubeType = "silver";
+		
 			}
 				
 
